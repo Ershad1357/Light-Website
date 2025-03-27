@@ -12,6 +12,16 @@
     --color-gray-dark: #333;
     --color-gray: #666;
     --color-gray-light: #555;
+    --color-purple: #6c63ff;
+    --color-blue: #4a90e2;
+    --color-gradient: linear-gradient(135deg, var(--color-teal) 0%, var(--color-purple) 100%);
+
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --font-weight-bold: 700;
+    --font-weight-medium: 500;
+    --font-weight-light: 300;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -23,6 +33,7 @@
     /* Border Radius */
     --border-radius: 4px;
     --border-radius-lg: 8px;
+    --border-radius-md: 6px;
 
     /* Box Shadow */
     --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -83,11 +94,72 @@ nav {
     margin: 0 auto;
 }
 
+/*------------------------------------*\
+  #LOGO
+\*------------------------------------*/
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
-    color: var(--color-white);
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: var(--spacing-sm);
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.logo:focus,
+.logo:focus-visible,
+.logo:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.company-name {
+    color: var(--color-orange);
+    font-family: var(--font-primary);
     font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+}
+
+.logo-slogan {
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-light);
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 100px;
+    }
+
+    .company-name {
+        font-size: 1.5rem;
+    }
+
+    .logo-slogan {
+        font-size: 0.8rem;
+    }
 }
 
 .language-toggle {
@@ -179,15 +251,46 @@ nav {
 }
 
 .service-card {
+    background: var(--color-white);
     padding: var(--spacing-lg);
-    background-color: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-lg);
-    transition: transform 0.3s ease;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--color-orange);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 0 15px var(--color-orange);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 0.5;
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-md);
+    transition: color 0.3s ease;
+}
+
+.service-card:hover i {
+    color: var(--color-orange);
 }
 
 .service-card h3 {
@@ -384,7 +487,7 @@ footer {
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
-:focus {
+:focus:not(.logo):not(.logo *) {
     outline: 2px solid var(--color-orange);
     outline-offset: 2px;
 }
