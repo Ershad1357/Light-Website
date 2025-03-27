@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Rastin Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Rastin Group</div>
+            <div class="language-toggle">
+                <button onclick="toggleLanguage()" class="lang-btn">DE</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="privacy-policy">
+            <h1 class="en">Privacy Policy</h1>
+            <h1 class="de" style="display: none;">Datenschutzerklärung</h1>
+
+            <p class="last-updated en">Last updated: March 24, 2025</p>
+            <p class="last-updated de" style="display: none;">Zuletzt aktualisiert: 24. März 2025</p>
+
+            <div class="policy-content">
+                <div class="en">
+                    <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure
+                        of Your information when You use the Service and tells You about Your privacy rights and how the
+                        law protects You.</p>
+
+                    <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to
+                        the collection and use of information in accordance with this Privacy Policy.</p>
+
+                    <h2>Interpretation and Definitions</h2>
+                    <p>The words of which the initial letter is capitalized have meanings defined under the following
+                        conditions. The following definitions shall have the same meaning regardless of whether they
+                        appear in singular or in plural.</p>
+
+                    <h2>Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, You can contact us:</p>
+                    <ul>
+                        <li>By email: info@rastingroup.de</li>
+                        <li>By phone number: 01775667174</li>
+                        <li>By mail: Marie-Grünberg-Straße 22</li>
+                    </ul>
+                </div>
+
+                <div class="de" style="display: none;">
+                    <p>Diese Datenschutzerklärung beschreibt unsere Richtlinien und Verfahren zur Erhebung, Verwendung
+                        und Offenlegung Ihrer Informationen, wenn Sie den Service nutzen, und informiert Sie über Ihre
+                        Datenschutzrechte und wie das Gesetz Sie schützt.</p>
+
+                    <p>Wir verwenden Ihre personenbezogenen Daten, um den Service bereitzustellen und zu verbessern.
+                        Durch die Nutzung des Services stimmen Sie der Erhebung und Verwendung von Informationen gemäß
+                        dieser Datenschutzerklärung zu.</p>
+
+                    <h2>Auslegung und Definitionen</h2>
+                    <p>Die Wörter, deren erster Buchstabe großgeschrieben ist, haben Bedeutungen, die unter den
+                        folgenden Bedingungen definiert sind. Die folgenden Definitionen haben die gleiche Bedeutung,
+                        unabhängig davon, ob sie im Singular oder im Plural erscheinen.</p>
+
+                    <h2>Kontakt</h2>
+                    <p>Wenn Sie Fragen zu dieser Datenschutzerklärung haben, können Sie uns kontaktieren:</p>
+                    <ul>
+                        <li>Per E-Mail: info@rastingroup.de</li>
+                        <li>Per Telefon: 01775667174</li>
+                        <li>Per Post: Marie-Grünberg-Straße 22</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="en">&copy; 2024 Rastin Group. All rights reserved.</p>
+        <p class="de" style="display: none;">&copy; 2024 Rastin Group. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const enElements = document.querySelectorAll('.en');
+            const deElements = document.querySelectorAll('.de');
+            const langBtn = document.querySelector('.lang-btn');
+
+            enElements.forEach(el => {
+                el.style.display = el.style.display === 'none' ? 'block' : 'none';
+            });
+
+            deElements.forEach(el => {
+                el.style.display = el.style.display === 'none' ? 'block' : 'none';
+            });
+
+            langBtn.textContent = langBtn.textContent === 'DE' ? 'EN' : 'DE';
+        }
+    </script>
+</body>
+
+</html>
